@@ -6,26 +6,24 @@ import About from "./pages/About";
 import Footer from "./components/Footer";
 import ContactUs from "./pages/ContactUs";
 import Login from "./pages/Login";
-import Signup from "./pages/Signup";
+import Register from "./pages/Register";
+import { Toaster } from "react-hot-toast";
+import Dashboard from "./pages/Dashboard";
 
 const App = () => {
   return (
     <Router>
-      <header>
-        <Navbar />
-      </header>
-      <main className="p-10">
-        <Routes>
-          <Route path="/" element={<Homepage />}></Route>
-          <Route path="/about" element={<About />}></Route>
-          <Route path="/contactUs" element={<ContactUs />}></Route>
-          <Route path="/login" element={<Login />}></Route>
-          <Route path="/signup" element={<Signup />}></Route>
-        </Routes>
-      </main>
-      <footer>
-        <Footer />
-      </footer>
+      <Toaster />
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Homepage />}></Route>
+        <Route path="/about" element={<About />}></Route>
+        <Route path="/contactUs" element={<ContactUs />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/register" element={<Register />}></Route>
+        <Route path="/dashboard" element={<Dashboard />}></Route>
+      </Routes>
+      <Footer />
     </Router>
   );
 };

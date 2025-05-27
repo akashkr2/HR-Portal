@@ -112,3 +112,4 @@ const TermsModal = ({ text = "I agree to" }) => {
 };
 
 export default TermsModal;
+// ({ agree });

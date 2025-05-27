@@ -7,8 +7,8 @@ const ContactUs = () => {
     <>
       <div className="bg-base-100 text-base-content">
         {/* Header */}
-        <section className="hero min-h-[40vh] bg-base-200 text-center">
-          <div className="hero-content flex-col">
+        <section className="min-h-[40vh] bg-base-200 text-center flex items-center justify-center">
+          <div className=" flex-col">
             <h1 className="text-4xl font-bold text-primary">Contact Us</h1>
             <p className="text-base-content mt-4">
               We'd love to hear from you. Reach out with questions, suggestions,

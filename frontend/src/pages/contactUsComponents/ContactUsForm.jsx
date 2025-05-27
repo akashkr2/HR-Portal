@@ -3,9 +3,9 @@ import React from "react";
 const ContactUsForm = () => {
   return (
     <>
-      <div className="bg-base-200 p-8 rounded-xl shadow-lg">
+      <div className="bg-base-200 p-8 rounded-xl shadow-lg h-full flex flex-col justify-between">
         <h2 className="text-2xl font-bold mb-6 text-primary">Send a Message</h2>
-        <form className="flex flex-col gap-4">
+        <form className="h-full flex flex-col justify-center gap-6">
           <input
             type="text"
             placeholder="Your Name"
@@ -21,7 +21,7 @@ const ContactUsForm = () => {
           <textarea
             className="textarea textarea-bordered w-full"
             placeholder="Your Message"
-            rows="5"
+            rows="9"
             name="message"
           ></textarea>
           <button className="btn btn-primary w-full">Submit</button>
