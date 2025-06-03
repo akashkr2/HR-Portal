@@ -1,7 +1,8 @@
 import mongoose from "mongoose";
 
-const userSchema = mongoose.Schema(
+const empSchema = mongoose.Schema(
   {
+    empId: { type: String, required: true, unique: true },
     fullName: { type: String, required: true },
     email: {
       type: String,
@@ -17,10 +18,23 @@ const userSchema = mongoose.Schema(
     },
     dob: { type: String, required: true },
     qualification: { type: String, required: true },
+    bloodGroup: {
+      type: String,
+      enum: ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-", "Other"],
+      required: true,
+    },
+    otherBloodGroup: {
+      type: String, // only filled when bloodGroup === "Other"
+      default: "",
+    },
     department: { type: String, required: true },
     position: { type: String, required: true },
     hiredDate: { type: String, required: true }, // Date of Hiring
     salary: { type: String, required: true },
+    address: { type: String, required: true },
+    shiftStart: { type: String, required: true },
+    shiftEnd: { type: String, required: true },
+    weekOff: { type: String, required: true },
     status: {
       type: String,
       enum: ["Active", "Suspended", "Terminated", "Retired", "Resigned"],
@@ -29,9 +43,9 @@ const userSchema = mongoose.Schema(
     },
     profilePic: { type: String },
   },
-  { timestamps: true } // ✅ corrected here
+  { timestamps: true }
 );
 
-const User = mongoose.model("User", userSchema);
+const Employee = mongoose.model("Employee", empSchema);
 
-export default User;
+export default Employee;

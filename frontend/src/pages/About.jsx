@@ -1,7 +1,7 @@
 import React from "react";
-import About1 from "./aboutComponents/About1";
-import Vision from "./aboutComponents/Vision";
-import Team from "./aboutComponents/Team";
+import About1 from "../components/about/About1";
+import Vision from "../components/about/Vision";
+import Team from "../components/about/Team";
 
 const About = () => {
   return (

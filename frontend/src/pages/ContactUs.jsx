@@ -1,6 +1,6 @@
 import React from "react";
-import ContactUsForm from "./contactUsComponents/ContactUsForm";
-import ContactUsCred from "./contactUsComponents/ContactUsCred";
+import ContactUsForm from "../components/contactUs/ContactUsForm";
+import ContactUsCred from "../components/contactUs/ContactUsCred";
 
 const ContactUs = () => {
   return (

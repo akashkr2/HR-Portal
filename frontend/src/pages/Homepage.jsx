@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import About1 from "./aboutComponents/About1";
+import About1 from "../components/about/About1";
 
 const Homepage = () => {
   return (

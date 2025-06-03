@@ -1,12 +1,21 @@
-import axios from "axios";
-import React, { useState } from "react";
+import axios from "../config/api";
+import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
   //
   const [data, setData] = useState({ email: "", password: "" });
   const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.fromRegister) {
+      if (location.state.toastId) toast.dismiss(location.state.toastId);
+      toast.success("Please log in to continue");
+    }
+  }, [location]);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setData((prev) => ({ ...prev, [name]: value }));
@@ -15,7 +24,7 @@ const Login = () => {
     e.preventDefault();
     // console.log(data);
     try {
-      const res = await axios.post("http://localhost:4500/api/auth/login", {
+      const res = await axios.post("/api/auth/login", {
         email: data.email,
         password: data.password,
       });

@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 
-const TermsModal = ({ text = "I agree to" }) => {
+const TermsModal = ({ text = "I agree to", agree, setAgree }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [agree, setAgree] = useState(false);
 
   const openModal = () => setIsOpen(true);
   const closeModal = (e) => {
@@ -17,9 +16,9 @@ const TermsModal = ({ text = "I agree to" }) => {
           id="terms"
           name="terms"
           className="checkbox checkbox-primary"
-          required
+          // required
           checked={agree}
-          onClick={() => {
+          onChange={() => {
             setAgree((prev) => !prev);
           }}
         />
